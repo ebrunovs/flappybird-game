@@ -2,6 +2,10 @@ import pygame
 import os
 import random
 
+from Cano import Cano
+from Passaro import Passaro
+from Chao import Chao
+
 TELA_LARGURA = 500
 TELA_ALTURA = 800
 

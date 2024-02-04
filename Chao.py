@@ -1,4 +1,7 @@
-from flappybird import IMAGEM_CHAO
+import pygame
+import os
+
+IMAGEM_CHAO = pygame.transform.scale2x(pygame.image.load(os.path.join('imgs','base.png')))
 
 class Chao:
     VELOCIDADE = 5
@@ -15,11 +18,10 @@ class Chao:
         self.x2 -= self.VELOCIDADE
         
         if self.x1 + self.LARGURA < 0:
-            self.x1 += self.LARGURA
+            self.x1 = self.x2 +  self.LARGURA
         if self.x2 + self.LARGURA < 0:
-            self.x2 +=  self.LARGURA
+            self.x2 = self.x1 +  self.LARGURA
             
     def desenhar(self, tela):
         tela.blit(self.IMAGEM, (self.x1, self.y))
         tela.blit(self.IMAGEM, (self.x2, self.y))
-        

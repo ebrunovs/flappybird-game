@@ -1,9 +1,11 @@
 import pygame
 import random
-from flappybird import IMAGEM_CANO
-from Passaro import Passaro
+import os
+
+IMAGEM_CANO = pygame.transform.scale2x(pygame.image.load(os.path.join('imgs','pipe.png')))
 
 class Cano:
+    
     DISTANCIA = 200
     VELOCIDADE = 5
     
@@ -14,7 +16,7 @@ class Cano:
         self.pos_base = 0
         self.CANO_TOPO = pygame.transform.flip(IMAGEM_CANO, False, True)
         self.CANO_BASE = IMAGEM_CANO
-        self.passaro = False
+        self.passou = False
         self.definir_altura()
         
     def definir_altura(self):

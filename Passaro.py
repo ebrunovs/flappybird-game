@@ -1,5 +1,12 @@
 import pygame
-from flappybird import IMAGEM_PASSARO
+import os
+#from flappybird import IMAGEM_PASSARO
+
+IMAGEM_PASSARO = [
+    pygame.transform.scale2x(pygame.image.load(os.path.join('imgs','bird1.png'))),
+    pygame.transform.scale2x(pygame.image.load(os.path.join('imgs','bird2.png'))),
+    pygame.transform.scale2x(pygame.image.load(os.path.join('imgs','bird3.png')))
+]
 
 class Passaro:
     IMGS = IMAGEM_PASSARO
@@ -35,7 +42,7 @@ class Passaro:
         elif deslocamento < 0:
             deslocamento -= 2
         
-        self.y = deslocamento
+        self.y += deslocamento
         
         # angulo do passaro
         if deslocamento < 0 or self.y <  (self.altura + 50):
@@ -73,4 +80,4 @@ class Passaro:
         tela.blit(imagem_rotacioanda, retangulo.topleft)
         
     def get_mask(self):
-        pygame.mask.from_surface(self.imagem)
+        return pygame.mask.from_surface(self.imagem)

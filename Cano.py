@@ -37,7 +37,7 @@ class Cano:
         distancia_topo = (self.x - passaro.x, self.pos_topo - round(passaro.y)) 
         distancia_base = (self.x - passaro.x, self.pos_base - round(passaro.y)) 
         
-        topo_ponto = pasa topo_mask = pasaro_mask.overlap(topo_mask, distancia_topo) topo_mask = pasaro_mask.overlap(topo_mask, distancia_topo)ro_mask.overlap(topo_mask, distancia_topo)
+        topo_ponto = pasaro_mask.overlap(topo_mask, distancia_base)
         base_ponto = pasaro_mask.overlap(base_mask, distancia_base)
         
         if base_ponto or topo_ponto:
